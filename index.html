@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sandra Luxe — Glow With Confidence</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- 3D Transition Curtain -->
+<div id="page-curtain"></div>
+<!-- Modal Particle Burst Container -->
+<div id="modal-particles"></div>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-icon"></span>
+        <span class="logo-text">Sandra <em>Luxe</em></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#shop" class="nav-link">Shop</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="toggle-sun">☀</span>
+          <span class="toggle-moon" style="color: white;">☽</span>
+        </button>
+        <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">✕</button>
+    <nav class="mobile-nav">
+      <a href="#home" class="mobile-link">Home</a>
+      <a href="#shop" class="mobile-link">Shop</a>
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+    </nav>
+    <p class="mobile-tagline">Glow With Confidence </p>
+  </div>
+
+  <!-- ============================================================
+       HERO SECTION
+       Changes: added hero--bg class, added overlay div,
+                removed .floating-ring elements,
+                removed .orbit-dot elements
+  ============================================================ -->
+  <section class="hero hero--bg" id="home">
+    <!-- Readability overlay for background image -->
+    <div class="hero-bg-overlay"></div>
+
+    <!-- Decorative background blobs (unchanged) -->
+    <div class="hero-blob blob-1"></div>
+    <div class="hero-blob blob-2"></div>
+    <div class="hero-blob blob-3"></div>
+
+    <div class="hero-content">
+      <p class="hero-label fade-in-up" style="--delay: 0s"> Uganda's Finest Beauty Brand</p>
+      <h1 class="hero-heading fade-in-up" style="--delay: 0.15s">
+        Reveal Your<br />
+        <em>Radiant</em> Self
+      </h1>
+      <p class="hero-sub fade-in-up" style="--delay: 0.3s">
+        Luxury skincare &amp; makeup crafted for every woman who believes
+        beauty is confidence in bloom.
+      </p>
+      <div class="hero-ctas fade-in-up" style="--delay: 0.45s">
+        <a href="#shop" class="btn btn-primary">Shop Now</a>
+        <a href="#about" class="btn btn-ghost">Explore Beauty</a>
+      </div>
+      <div class="hero-stats fade-in-up" style="--delay: 0.6s">
+        <div class="stat"><strong>12K+</strong><span>Happy Clients</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>120+</strong><span>Products</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>100%</strong><span>Natural</span></div>
+      </div>
+    </div>
+
+    <!-- Hero visual — floating rings + orbit dots REMOVED -->
+    <div class="hero-visual">
+      <div class="product-orb">
+        <div class="orb-glow"></div>
+        <div class="orb-face">
+          <img src="media/model2.png" alt="" style="height: 160px; width: 300px;">
+        </div>
+      </div>
+
+      <!-- Floating badges (unchanged) -->
+      <div class="float-badge badge-1 float-anim">
+      </div>
+      <div class="float-badge badge-2 float-anim" style="--delay-float: 0.5s">
+      </div>
+      <div class="float-badge badge-3 float-anim" style="--delay-float: 1s">
+        <span class="badge-icon"></span>
+        <span>Vegan & Cruelty-Free</span>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FEATURED CATEGORIES STRIP
+  ============================================================ -->
+  <section class="categories-strip reveal">
+    <div class="strip-track">
+      <span>Skincare</span><span class="sep">✦</span>
+      <span>Foundations</span><span class="sep">✦</span>
+      <span>Lip Colors</span><span class="sep">✦</span>
+      <span>Eye Palettes</span><span class="sep">✦</span>
+      <span>Serums</span><span class="sep">✦</span>
+      <span>Perfumes</span><span class="sep">✦</span>
+      <span>Skincare</span><span class="sep">✦</span>
+      <span>Foundations</span><span class="sep">✦</span>
+      <span>Lip Colors</span><span class="sep">✦</span>
+      <span>Eye Palettes</span><span class="sep">✦</span>
+      <span>Serums</span><span class="sep">✦</span>
+      <span>Perfumes</span><span class="sep">✦</span>
+      <span>Haircare</span><span class="sep">✦</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SHOP SECTION
+  ============================================================ -->
+  <section class="shop section" id="shop">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label"> Our Collection</p>
+        <h2 class="section-title">Curated For You</h2>
+        <p class="section-desc">From silky serums to bold lip shades — discover beauty that speaks to your soul and Unleash your glow with products designed 
+          for confidence and elegance.</p>
+      </div>
+      <div class="filter-tabs reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="skincare">Skincare</button>
+        <button class="filter-btn" data-filter="makeup">Makeup</button>
+        <button class="filter-btn" data-filter="fragrances">Fragrances</button>
+        <button class="filter-btn" data-filter="Haircare">Haircare</button>
+      </div>
+      <div class="product-grid" id="productGrid">
+        <!-- Products injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BANNER — GLOW CTA
+  ============================================================ -->
+  <section class="glow-banner reveal">
+    <div class="banner-inner">
+      <p class="banner-label"> Limited Offer</p>
+      <h2>Glow With <em>Confidence</em></h2>
+      <p>Free Delivery on orders above UGX 80,000. Beauty delivered to your door.</p>
+      <a href="#shop" class="btn btn-primary btn-lg">Glow With Confidence</a>
+    </div>
+    <div class="banner-orbs">
+      <div class="b-orb b-orb-1"></div>
+      <div class="b-orb b-orb-2"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIALS
+  ============================================================ -->
+  <section class="testimonials section" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label"> Real Women. Real Glow.</p>
+        <h2 class="section-title">What They're Saying</h2>
+      </div>
+      <div class="testimonial-slider reveal">
+        <div class="testimonial-track" id="testimonialTrack">
+          <!-- Injected by JS -->
+        </div>
+        <div class="slider-controls">
+          <button class="slider-prev" id="sliderPrev" aria-label="Previous">‹</button>
+          <div class="slider-dots" id="sliderDots"></div>
+          <button class="slider-next" id="sliderNext" aria-label="Next">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT SECTION
+  ============================================================ -->
+  <section class="about section" id="about">
+    <div class="container about-grid">
+      <div class="about-visual reveal">
+        <div class="about-img-wrap">
+          <div class="about-img-main">
+  <img
+    src="media/owner.png"
+    alt="Sandra — Founder of Sandra Luxe"
+    class="about-owner-img"
+    onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='block';"
+  />
+  <svg style="display:none" width="100%" height="100%" viewBox="0 0 300 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="300" height="380" rx="24" fill="url(#aboutGrad)"/>
+    <ellipse cx="150" cy="140" rx="70" ry="70" fill="#f8c8dc" opacity="0.6"/>
+    <ellipse cx="150" cy="130" rx="50" ry="50" fill="#fffaf5" opacity="0.8"/>
+    <ellipse cx="150" cy="120" rx="38" ry="45" fill="#f2a3bc" opacity="0.7"/>
+    <ellipse cx="150" cy="90" rx="35" ry="30" fill="#f8c8dc"/>
+    <circle cx="90" cy="280" r="18" fill="#d4af37" opacity="0.3"/>
+    <circle cx="210" cy="300" r="24" fill="#f8c8dc" opacity="0.4"/>
+    <text x="150" y="230" text-anchor="middle" font-family="Georgia" font-size="13" fill="#c85f80" opacity="0.9">Est. 2019 · Kampala, Uganda</text>
+    <text x="150" y="258" text-anchor="middle" font-family="Georgia" font-size="11" fill="#b8942f" opacity="0.8">Beauty for Every Woman</text>
+    <defs>
+      <linearGradient id="aboutGrad" x1="0" y1="0" x2="300" y2="380" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#fce4ee"/><stop offset="1" stop-color="#fdf3d0"/>
+      </linearGradient>
+    </defs>
+  </svg>
+</div>
+          <div class="about-img-accent">
+            <span>✦</span>
+            <p>Since 2022</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text reveal">
+        <p class="section-label">✦ Our Story</p>
+        <h2 class="section-title">Beauty Born<br /><em>From Passion</em></h2>
+        <p class="about-body">
+          Sandra Luxe was born in the heart of Kampala, Uganda — a vision to make luxury beauty accessible to every African woman. Our founder believed that every woman deserves to feel radiant, seen, and celebrated.
+        </p>
+        <p class="about-body">
+          We craft every product with love, sourcing natural ingredients from Uganda's rich landscapes. From shea butter harvested in the north to the finest botanical extracts — nature meets science in every bottle.
+        </p>
+        <div class="about-pillars">
+          <div class="pillar">
+            <span class="pillar-icon">🌸</span>
+            <div><strong>Natural Beauty</strong><p>Clean, skin-loving ingredients</p></div>
+          </div>
+          <div class="pillar">
+            <span class="pillar-icon">👑</span>
+            <div><strong>Confidence</strong><p>Beauty that empowers</p></div>
+          </div>
+          <div class="pillar">
+            <span class="pillar-icon">💛</span>
+            <div><strong>Empowerment</strong><p>For every woman, everywhere</p></div>
+          </div>
+        </div>
+        <a href="#shop" class="btn btn-primary">Discover Our Range</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT SECTION
+  ============================================================ -->
+  <section class="contact section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info reveal">
+        <p class="section-label">✦ Get In Touch</p>
+        <h2 class="section-title">We'd Love<br /><em>to Hear You</em></h2>
+        <p class="contact-body">Have questions about a product? Want to collaborate? Reach out — we reply within 24 hours.</p>
+        <div class="contact-details">
+          <div class="detail-item">
+            <span class="detail-icon">📍</span>
+            <div><strong>Location</strong><p>Kampala, Uganda <br>Kilombe Road</p></div>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon">📧</span>
+            <div><strong>Email</strong><p>hello@sandraluxe.ug</p></div>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon">📱</span>
+            <div><strong>WhatsApp</strong><p>+256 754760954</p></div>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-btn" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="TikTok">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.65a8.18 8.18 0 004.78 1.52V6.7a4.85 4.85 0 01-1.01-.01z"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap reveal">
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="fname" placeholder="Amara" autocomplete="given-name" />
+              <span class="form-error" id="fnameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lname" placeholder="Nakato" autocomplete="family-name" />
+              <span class="form-error" id="lnameError"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+            <span class="form-error" id="emailError"></span>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Product inquiry..." />
+            <span class="form-error" id="subjectError"></span>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help..."></textarea>
+            <span class="form-error" id="messageError"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message </button>
+          <div class="form-success" id="formSuccess">
+            <span>🌸</span> Thank you! We'll get back to you soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo">
+            <span class="logo-icon"></span>
+            <span class="logo-text">Sandra <em>Luxe</em></span>
+          </a>
+          <p>Beauty is not about perfection — it's about confidence. Glow from within.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="#home">Home</a>
+          <a href="#shop">Shop</a>
+          <a href="#about">About Us</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-links">
+          <h4>Categories</h4>
+          <a href="#shop">Skincare</a>
+          <a href="#shop">Makeup</a>
+          <a href="#shop">Fragrances</a>
+          <a href="#shop">Haircare</a>
+           <a href="#shop">Gift Sets</a>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Stay in the Glow</h4>
+          <p>Get exclusive deals &amp; beauty tips.</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Your email..." id="newsletterEmail" />
+            <button onclick="subscribeNewsletter()" class="btn btn-primary btn-sm">Join</button>
+          </div>
+          <span class="newsletter-msg" id="newsletterMsg"></span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Sandra Luxe, Kampala, Uganda. </p>
+        <p>Privacy Policy · Terms of Service</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       PRODUCT MODAL
+  ============================================================ -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="productModal">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
+      <div class="modal-inner">
+        <div class="modal-gallery" id="modalGallery"></div>
+        <div class="modal-info" id="modalInfo"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CART PANEL
+  ============================================================ -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h3>Your Bag <span class="cart-badge" id="cartBadge">0</span></h3>
+      <button class="cart-close" id="cartClose">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <span>🛍️</span>
+        <p>Your bag is empty</p>
+        <a href="#shop" class="btn btn-primary btn-sm" id="cartShopLink">Start Shopping</a>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">UGX 0</strong>
+      </div>
+      <button class="btn btn-primary btn-full" onclick="checkout()">Buy </button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
