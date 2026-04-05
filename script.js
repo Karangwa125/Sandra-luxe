@@ -177,6 +177,22 @@ const PRODUCTS = [
     svgAccent: "#e88fa8",
     image: "media/TRMERIC SUPER.png"
   },
+
+   {
+    id: 12,
+    name: "Caro Light Brightening Cream",
+    category: "skincare ",
+    categoryLabel: "skincare ",
+    price:  45000,
+    oldPrice: 50000,
+    badge: "new",
+    emoji: "🌹",
+    description: " Reveal a brighter, smoother complexion with Caro Light Brightening Cream—a trusted skincare solution designed to hydrate, nourish, and improve skin tone for a naturally radiant look.Enriched with carrot oil (beta-carotene) and essential vitamins like A and E",
+    rating: 5,
+    svgColor: "#f8c8dc",
+    svgAccent: "#e88fa8",
+    image: "media/caro light.png"
+  },
   
   
   
