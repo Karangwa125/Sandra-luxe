@@ -1167,7 +1167,7 @@ section.s3d-scroll-visible {
 }
 
 .product-image {
-  height: 350px;   /* change this value */
-  width: 270px;     /* keeps proportions */
+  height: 470px;   /* change this value */
+  width: 356px;     /* keeps proportions */
   object-fit: cover; /* optional: crop nicely */
 }
