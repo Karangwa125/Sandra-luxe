@@ -80,7 +80,7 @@ const PRODUCTS = [
     badge: "new",
     emoji: "🌹",
     description: "A gentle beauty soap enriched with nourishing ingredients that cleanse the skin while maintaining moisture, leaving it soft, smooth, and refreshed.",
-    rating: 4.5,
+    rating: 5,
     svgColor: "#f8c8dc",
     svgAccent: "#e88fa8",
     image: "media/Geisha Soap.png"
@@ -95,7 +95,7 @@ const PRODUCTS = [
     badge: "new",
     emoji: "🌹",
     description: "Refreshing body sprays designed to keep you feeling fresh and confident all day. Provides long-lasting fragrance and helps control body odor.",
-    rating: 4.5,
+    rating: 5,
     svgColor: "#f8c8dc",
     svgAccent: "#e88fa8",
     image: "media/Deodorants.png"
@@ -112,7 +112,7 @@ const PRODUCTS = [
     badge: "new",
     emoji: "🌹",
     description: "Experience the perfect blend of beauty and skincare with Veet Gold Turmeric Body Care—a premium yet affordable solution designed for those who want silky-smooth skin without compromising on care.",
-    rating: 4.5,
+    rating: 5,
     svgColor: "#f8c8dc",
     svgAccent: "#e88fa8",
     image: "media/Tumeric.png"
@@ -191,7 +191,7 @@ const PRODUCTS = [
     badge: "new",
     emoji: "🌹",
     description: "A silky serum infused with Ugandan rose water and hyaluronic acid. Deeply hydrates, plumps fine lines, and leaves skin luminously dewy.",
-    rating: 30,
+    rating: 5,
     svgColor: "#f8c8dc",
     svgAccent: "#e88fa8",
     image: "media/1.png"
@@ -313,14 +313,14 @@ const TESTIMONIALS = [
     location: "Kampala, Uganda",
     avatarUrl: "https://ui-avatars.com/api/?name=Amara+Nakato&background=f8c8dc&color=8b1a4a&size=100&bold=true&rounded=true",
     quote: "The Rose Glow Serum completely transformed my skin! Within a week my complexion was brighter and so hydrated. Sandra Luxe is genuinely magical.",
-    stars: 5,
+    stars: 4,
   },
   {
     name: "Zara Achieng",
     location: "Entebbe, Uganda",
     avatarUrl: "https://ui-avatars.com/api/?name=Zara+Achieng&background=e88fa8&color=ffffff&size=100&bold=true&rounded=true",
     quote: "I finally found a foundation that matches my beautiful dark skin tone. The Glow Foundation is everything! Plus the packaging is absolutely stunning.",
-    stars: 5,
+    stars: 3,
   },
   {
     name: "Blessing Namutebi",
@@ -334,7 +334,7 @@ const TESTIMONIALS = [
     location: "Gulu, Uganda",
     avatarUrl: "https://ui-avatars.com/api/?name=Grace+Nalubega&background=c85f80&color=ffffff&size=100&bold=true&rounded=true",
     quote: "The Shea Butter Cream saved my skin during the dry season. And knowing it's made with local Ugandan shea butter makes me feel so proud. Love this brand!",
-    stars: 5,
+    stars: 4,
   },
   {
     name: "Sharon Tendo",
@@ -533,35 +533,34 @@ $$('.filter-btn').forEach(btn => {
 /* ─────────────────────────────────────────────
    PRODUCT MODAL
 ───────────────────────────────────────────── */
-const modalOverlay = $('#modalOverlay');
-const modalClose   = $('#modalClose');
-const modalGallery = $('#modalGallery');
-const modalInfo    = $('#modalInfo');
+const modalOverlay = document.getElementById('modalOverlay');
+const modalClose   = document.getElementById('modalClose');
+const modalGallery = document.getElementById('modalGallery');
+const modalInfo    = document.getElementById('modalInfo');
 
 function openProductModal(id) {
   const product = PRODUCTS.find(p => p.id === id);
   if (!product) return;
 
   modalGallery.innerHTML = `
-    <div style="text-align:center; padding:2rem; animation: fadeInUp 0.5s ease forwards;">
-      <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="80" cy="80" r="76" fill="${product.svgColor}" opacity="0.35"/>
-        <circle cx="80" cy="80" r="55" fill="${product.svgColor}" opacity="0.5"/>
-        <text x="80" y="108" text-anchor="middle" font-size="72">${product.emoji}</text>
-      </svg>
-    </div>
+    <img 
+      src="${product.image}" 
+      alt="${product.name}"
+      class="modal-product-img"
+      onerror="this.onerror=null; this.style.display='none';"
+    />
   `;
 
-  const stars = '★'.repeat(product.rating) + '☆'.repeat(5 - product.rating);
+  const stars = '★'.repeat(Math.floor(product.rating)) + '☆'.repeat(5 - Math.floor(product.rating));
   const oldPrice = product.oldPrice
     ? `<span style="font-size:1rem; color:var(--fg-muted); text-decoration:line-through; margin-left:0.5em;">${formatPrice(product.oldPrice)}</span>`
     : '';
 
   modalInfo.innerHTML = `
-    <p class="modal-category">${product.categoryLabel} ✦ Sandra Luxe</p>
+    <p class="modal-category">${product.categoryLabel}</p>
     <h2 class="modal-name">${product.name}</h2>
     <div class="modal-rating">${stars}</div>
-    <p class="modal-price">${formatPrice(product.price)}${oldPrice}</p>
+    <p class="modal-price">${formatPrice(product.price)} ${oldPrice}</p>
     <p class="modal-desc">${product.description}</p>
     <div class="modal-ctas">
       <button class="btn btn-primary" onclick="addToCart(${product.id}); closeProductModal();">Add to Bag</button>
@@ -670,7 +669,8 @@ function renderCartItems() {
     const el = document.createElement('div');
     el.className = 'cart-item';
     el.innerHTML = `
-      <div class="cart-item-img">${item.emoji}</div>
+      <div class="cart-item-img"><img src="${PRODUCTS.find(p => p.id === item.id)?.image}" alt="${item.name}" 
+      style="width:100%; height:100%; object-fit:cover; border-radius:var(--r-sm);" onerror="this.onerror=null; this.parentElement.textContent='${item.emoji}';" /></div>
       <div class="cart-item-info">
         <p class="cart-item-name">${item.name}</p>
         <p class="cart-item-price">${formatPrice(item.price)}</p>
@@ -1004,9 +1004,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountUp();
   updateActiveNavLink();
 
-  console.log('%c✦ Sandra Luxe — Built with ♥ in Uganda',
+  console.log('%c Sandra Luxe — Built with ♥ in Uganda',
     'font-size:14px; color:#d4af37; background:#1a0a12; padding:8px 16px; border-radius:20px;');
 });
-
-
-
