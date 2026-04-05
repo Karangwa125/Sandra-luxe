@@ -104,6 +104,85 @@ const PRODUCTS = [
   
   {
     id: 7,
+    name: "VEET Gold Turmeric",
+    category: "skincare ",
+    categoryLabel: "skincare ",
+    price:  26000,
+    oldPrice: null,
+    badge: "new",
+    emoji: "🌹",
+    description: "Experience the perfect blend of beauty and skincare with Veet Gold Turmeric Body Care—a premium yet affordable solution designed for those who want silky-smooth skin without compromising on care.",
+    rating: 4.5,
+    svgColor: "#f8c8dc",
+    svgAccent: "#e88fa8",
+    image: "media/Tumeric.png"
+  },
+   {
+    id: 8,
+    name: "PAW PAW Papaya",
+    category: "skincare ",
+    categoryLabel: "skincare ",
+    price:  24000,
+    oldPrice: 26000,
+    badge: "new",
+    emoji: "🌹",
+    description: "Upgrade your daily shower routine with the refreshing power of Paw Paw Papaya Brightening Shower Gel—a perfect balance of gentle cleansing and skin nourishment at a price that fits your budget in Uganda.",
+    rating: 5,
+    svgColor: "#f8c8dc",
+    svgAccent: "#e88fa8",
+    image: "media/pawa pawa.png"
+  },
+    {
+    id: 9,
+    name: "WHITE SECRET Brightening",
+    category: "skincare ",
+    categoryLabel: "skincare ",
+    price:  40000,
+    oldPrice: null,
+    badge: "new",
+    emoji: "🌹",
+    description: "Transform your skincare routine with the powerful results of White Secret Brightening & Exfoliating Body Care—a premium-feel solution designed to give you smoother, clearer, and more radiant skin at a reasonable mid-range price in Uganda.",
+    rating: 5,
+    svgColor: "#f8c8dc",
+    svgAccent: "#e88fa8",
+    image: "media/WHITE SECRET.png"
+  },
+   {
+    id: 10,
+    name: "COCOA BUTTER",
+    category: "skincare ",
+    categoryLabel: "skincare ",
+    price:  45000,
+    oldPrice: null,
+    badge: "new",
+    emoji: "🌹",
+    description: "Unlock soft, glowing skin with American Dream Cocoa Butter Lemon Cream — a rich, deeply hydrating skin cream specially formulated to nourish, brighten, and protect your skin every day.",
+    rating: 5,
+    svgColor: "#f8c8dc",
+    svgAccent: "#e88fa8",
+    image: "media/COCO.png"
+  },
+    {
+    id: 11,
+    name: "Turmeric Super Whitening",
+    category: "skincare ",
+    categoryLabel: "skincare ",
+    price:  30000,
+    oldPrice: null,
+    badge: "new",
+    emoji: "🌹",
+    description: "Elevate your daily shower routine with Turmeric Super Whitening Shower Cream, a luxurious blend designed to cleanse, brighten, and nourish your skin in one easy step. Infused with the natural goodness of turmeric, known for its skin-brightening and antioxidant properties, this shower cream helps reduce dullness while leaving your skin soft, smooth, and radiant.",
+    rating: 5,
+    svgColor: "#f8c8dc",
+    svgAccent: "#e88fa8",
+    image: "media/TRMERIC SUPER.png"
+  },
+  
+  
+  
+
+  {
+    id: 29,
     name: "Rose Glow Serum",
     category: "skincare",
     categoryLabel: "Skincare",
@@ -112,13 +191,13 @@ const PRODUCTS = [
     badge: "new",
     emoji: "🌹",
     description: "A silky serum infused with Ugandan rose water and hyaluronic acid. Deeply hydrates, plumps fine lines, and leaves skin luminously dewy.",
-    rating: 5,
+    rating: 30,
     svgColor: "#f8c8dc",
     svgAccent: "#e88fa8",
     image: "media/1.png"
   },
   {
-    id: 8,
+    id: 31,
     name: "Velvet Lip Rouge",
     category: "makeup",
     categoryLabel: "Makeup",
@@ -133,7 +212,7 @@ const PRODUCTS = [
     image: "media/2.png"
   },
   {
-    id: 9,
+    id: 32,
     name: "24K Gold Eye Palette",
     category: "makeup",
     categoryLabel: "Makeup",
@@ -148,7 +227,7 @@ const PRODUCTS = [
     image: "media/3.png"
   },
   {
-    id: 10,
+    id: 33,
     name: "Nile Bloom Perfume",
     category: "fragrances",
     categoryLabel: "Fragrance",
@@ -163,7 +242,7 @@ const PRODUCTS = [
     image: "media/4.png"
   },
   {
-    id: 11,
+    id: 34,
     name: "Shea Butter Cream",
     category: "skincare",
     categoryLabel: "Skincare",
@@ -178,7 +257,7 @@ const PRODUCTS = [
     image: "media/5.png"
   },
   {
-    id: 12,
+    id: 35,
     name: "Glow Foundation",
     category: "makeup",
     categoryLabel: "Makeup",
@@ -193,7 +272,7 @@ const PRODUCTS = [
     image: "media/6.png"
   },
   {
-    id: 13,
+    id: 36,
     name: "Lash Amplify Mascara",
     category: "makeup",
     categoryLabel: "Makeup",
@@ -208,7 +287,7 @@ const PRODUCTS = [
     image: "media/7.png"
   },
   {
-    id: 14,
+    id: 37,
     name: "Turmeric Glow Mask",
     category: "skincare",
     categoryLabel: "Skincare",
