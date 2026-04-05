@@ -678,12 +678,34 @@ ul, ol { list-style: none; }
 .modal-overlay.open .modal { transform: scale(1) translateY(0); }
 .modal-close { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; border-radius: 50%; background: var(--bg); border: 1px solid var(--border); color: var(--fg); font-size: 0.9rem; display: flex; align-items: center; justify-content: center; transition: all var(--t-base); z-index: 5; }
 .modal-close:hover { background: var(--pink); color: white; }
-.modal-inner { display: grid; grid-template-columns: 1fr 1.1fr; min-height: 420px; }
-.modal-gallery { background: linear-gradient(135deg, var(--cream), var(--pink) 80%); border-radius: var(--r-xl) 0 0 var(--r-xl); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
-[data-theme="dark"] .modal-gallery { background: linear-gradient(135deg, #2a1220, var(--pink-deep) 80%); }
+.modal-inner { display: grid; grid-template-columns: 1.2fr 1fr; min-height: 500px; }
+.modal-gallery { border-radius: var(--r-xl) 0 0 var(--r-xl); overflow: hidden; position: relative; min-height: 500px; height: 100%; padding: 0; }[data-theme="dark"] .modal-gallery { background: linear-gradient(135deg, #2a1220, var(--pink-deep) 80%); }
 .modal-gallery svg { transition: transform 0.5s ease; }
 .modal-gallery:hover svg { transform: scale(1.05) rotate(3deg); }
-.modal-info { padding: 2.2rem 2rem; display: flex; flex-direction: column; gap: 0.8rem; }
+.modal-info { 
+  padding: 2.2rem 2rem; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 0.8rem;
+  opacity: 1 !important;
+  visibility: visible !important;
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+.modal-info * {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+.modal-category { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+.modal-name { font-family: var(--font-display); font-size: 1.7rem; font-weight: 400; line-height: 1.2; color: var(--fg); }
+.modal-price { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--pink-deep); }
+.modal-desc { font-size: 0.88rem; color: var(--fg-mid); line-height: 1.75; flex: 1; }
+.modal-rating { display: flex; gap: 3px; color: var(--gold); font-size: 0.95rem; }
+.modal-ctas { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.5rem; }
 .modal-category { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
 .modal-name { font-family: var(--font-display); font-size: 1.7rem; font-weight: 400; line-height: 1.2; color: var(--fg); }
 .modal-price { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--pink-deep); }
@@ -1084,18 +1106,8 @@ section.s3d-scroll-visible {
 
 /* Modal info stagger-in */
 .modal-info > * {
-  opacity: 0;
-  transform: translateY(14px);
-  animation: modalInfoItem 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.modal-info > *:nth-child(1) { animation-delay: 0.18s; }
-.modal-info > *:nth-child(2) { animation-delay: 0.24s; }
-.modal-info > *:nth-child(3) { animation-delay: 0.30s; }
-.modal-info > *:nth-child(4) { animation-delay: 0.36s; }
-.modal-info > *:nth-child(5) { animation-delay: 0.42s; }
-.modal-info > *:nth-child(6) { animation-delay: 0.48s; }
-@keyframes modalInfoItem {
-  to { opacity: 1; transform: translateY(0); }
+  opacity: 1;
+  transform: none;
 }
 
 /* Extra product details inside modal */
@@ -1167,7 +1179,15 @@ section.s3d-scroll-visible {
 }
 
 .product-image {
-  height: 470px;   /* change this value */
-  width: 356px;     /* keeps proportions */
-  object-fit: cover; /* optional: crop nicely */
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.modal-product-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
